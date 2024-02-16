@@ -10,6 +10,7 @@ public class LoginDemo {
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/javademo","root","");
+			
 			System.out.println("Connection established");
 		}
 		catch(Exception e)
