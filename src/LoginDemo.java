@@ -10,8 +10,14 @@ public class LoginDemo {
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/javademo","root","");
-			
 			System.out.println("Connection established");
+			Statement stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from login");
+			System.out.println("Username\tPassword");
+			while(rs.next())
+			{
+				System.out.println(rs.getString(1)+"\t\t"+rs.getString(2));
+			}
 		}
 		catch(Exception e)
 		{
